@@ -20,8 +20,11 @@ sub log1{
   	die "Error when logged out" unless $response.is_success;
 }
 
-sub handle{
-	$filename = $_;
-	open(my $handler, $filename);
-	
+my %users=(
+account1=>'password1',
+account2=>'password2'
+);
+
+while(my ($usr, $pwd)=each(%users)){
+    log1($usr, $pwd);
 }
